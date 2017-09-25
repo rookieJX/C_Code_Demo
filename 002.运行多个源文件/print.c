@@ -64,10 +64,10 @@ m = max(a,max(b,c))
 
 int main(int argc, char const *argv[])
 {
-	text = 10;
+	text = 10;					// 调用print.h文件中定义
 	printf("%d\n",text );
-	int c = max(100,300);
+	int c = max(100,300);		// 调用定义函数
 	printf("%d\n",c);
-	print_start();
+	print_start();				// 调用定义函数
 	return 0;
 }
