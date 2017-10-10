@@ -54,7 +54,7 @@ int main(int argc, char const *argv[])
 	}
 	
 	int **m; // 定义二维数组
-	m = alloc2int(col,row);
+	m = alloc2int(col,row);  // 动态申请
 	for (int i = 0; i < col; i++)
 	{
 		printf("请输入二维矩阵所有元素：\n第【%d】行：\n",i);
@@ -84,6 +84,7 @@ int main(int argc, char const *argv[])
 		printf("\n");
 	}
 
+	free2int(m);  // 释放
 	return 0;
 }
 
