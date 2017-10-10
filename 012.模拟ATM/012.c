@@ -27,7 +27,7 @@ int main(int argc, char const *argv[])
 				puts("|    Your balance is $1000.    |");
 				puts("|  Press any key to return...  |");
 				puts("================================");
-				getchar();
+				getchar();  // 这里两个获取，第一个是为了获取键盘的return符号，第二个作用是用来等待键盘输入任意字符
 				getchar();
 			break;
 			case '2':
