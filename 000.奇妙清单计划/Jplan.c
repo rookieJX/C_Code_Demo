@@ -1,6 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// 定义计划数量
+#define PlanCount 40
+#define TotalCount 4261
+// 当前年月日
+#define DateYear 2017
+#define DateMonth 10
+#define DateDay 18
+
 // 定义月份
 #define January 1
 #define February 2
@@ -69,20 +77,23 @@ int year_month_day(int year,int month) {
 /*2017.10.18 不背单词【4261】- 计划【40】- 剩余【4221】*/
 int main(int argc, char const *argv[])
 {
-	int totalCount = 4261; // 总数量
-	int dateYear = 2017,dateMonth = 10,dateDay = 18;
+	int totalCount = TotalCount; // 总数量
+	int dateYear = DateYear,dateMonth = DateMonth,dateDay = DateDay;
 	do {
 		int date_month_day = year_month_day(dateYear,dateMonth);
 		for (int i = dateDay; i <= date_month_day; i++)
 		{
-			printf("%d.%02d.%02d 不背单词【%d】- 计划【%d】- 剩余【%d】\n", dateYear,dateMonth,dateDay,totalCount,40,totalCount-40);
+			printf("%d.%02d.%02d 不背单词【%d】- 计划【%d】- 剩余【%d】\n", dateYear,dateMonth,dateDay,totalCount,PlanCount,totalCount-PlanCount);
 			dateDay += 1;
-			totalCount -= 40;
+			totalCount -= PlanCount;
 			if (totalCount <= 0) break;
 		}
 		dateMonth += 1;
 		dateDay = 1;
-		if (dateMonth == 12) dateMonth = 1;
+		if (dateMonth == 12) {
+			dateMonth = 1;
+			dateYear += 1;
+		}
 	} while(totalCount >= 0);
 
 	return 0;
