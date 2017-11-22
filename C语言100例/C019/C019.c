@@ -3,13 +3,33 @@
 */
 
 #include <stdio.h>
+#define N 1000
 
 int main(int argc, char const *argv[])
 {
-	int sum=0;
-	int i = 6;
-	while() {
-		
+	int i,j,k,n,sum;
+	int a[256];
+	for (int i = 2; i < N; i++)
+	{
+		sum = a[0] = 1;
+		k = 0;
+		for (int j = 2; j <= (i/2); j++)
+		{
+			if (i % j == 0)
+			{
+				sum += j;
+				a[++k] = j;
+			}
+		}
+		if (i == sum)
+		{
+			printf("%d=%d",i,a[0] );
+			for (int n = 1; n <= k; n++)
+			{
+				printf("+%d",a[n] );
+			}
+			printf("\n");
+		}
 	}
 
 
