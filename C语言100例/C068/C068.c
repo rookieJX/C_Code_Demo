@@ -11,15 +11,15 @@ int main(int argc, char const *argv[])
 	printf("请输入数组个数：");
 	scanf("%d",&n);
 	int *arr;
-	// arr = malloc_int_array(n);
-	// for (int i = 0; i < n; i++)
-	// {
-	// 	arr[i] = i+1;
-	// }
-	// for (int i = 0; i < n; i++)
-	// {
-	// 	printf("%4d",arr[i] );
-	// }
+	arr = malloc_int_array(n);
+	for (int i = 0; i < n; i++)
+	{
+		arr[i] = i+1;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		printf("%4d",arr[i] );
+	}
 	return 0;
 }
 
